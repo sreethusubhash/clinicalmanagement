@@ -39,7 +39,10 @@ def index(request):
         obj.department=request.POST['department']
         obj.doctor_name=request.POST['doctor']
         obj.save()
+        
+        
         return HttpResponseRedirect('/')
+    
     return render(request,'resources1/index.html')
 def contact(request):
     if request.method =='POST':

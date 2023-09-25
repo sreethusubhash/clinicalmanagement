@@ -10,7 +10,7 @@ class ContactInfo(admin.ModelAdmin):
     list_display=('name','subject')
     
 class DeptDetail(admin.ModelAdmin):
-    list_display=('dept_name','dept_image')
+    list_display=('dept_name','dept_image','description')
     
     
 admin.site.register(models.Hospital)

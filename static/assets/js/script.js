@@ -1,0 +1,3 @@
+// <script src='static/assets/js/script.js'>
+//function cardfun()
+//{document.getElementById("abc").innerHTML="Cardiology is the study of the heart. Cardiology is a branch of medicine that deals with disorders of the heart and the cardiovascular system. The field includes medical diagnosis and treatment of congenital heart defects, coronary artery disease, heart failure, valvular heart disease, and electrophysiology";}

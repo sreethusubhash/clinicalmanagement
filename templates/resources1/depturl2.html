@@ -6,6 +6,12 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Medilab Bootstrap Template - Index</title>
+  <script>
+    function cardfun()
+{
+    document.getElementById("abc").innerHTML="Cardiology is the study of the heart. Cardiology is a branch of medicine that deals with disorders of the heart and the cardiovascular system. The field includes medical diagnosis and treatment of congenital heart defects, coronary artery disease, heart failure, valvular heart disease, and electrophysiology";
+}
+  </script>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -464,9 +470,10 @@ Automate the management of hospital inventory, including medical supplies, equip
           <div class="col-lg-3">
             <ul class="nav nav-tabs flex-column">
               <li class="nav-item">
-                {% for i in data %}
+                <h3 onclick=cardfun()>Cardiology</h3>
+                {% comment %} {% for i in data %} 
                 <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">{{i.dept_name}}</a>
-                {% endfor %}
+               
               </li>
               {% comment %} <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-2">Neurology</a>
@@ -479,7 +486,7 @@ Automate the management of hospital inventory, including medical supplies, equip
               </li>
               <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Eye Care</a>
-              </li> {% endcomment %}
+              </li>{% endfor %} {% endcomment %}
             </ul>
           </div>
           <div class="col-lg-9">
@@ -490,7 +497,8 @@ Automate the management of hospital inventory, including medical supplies, equip
                     <h3>Cardiology</h3>
                    
                     <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
-                    <p>{{dept_data.description}}</p>
+                    <p id=abc></p>
+                    
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="static/assets/img/departments-1.jpg" alt="" class="img-fluid">
