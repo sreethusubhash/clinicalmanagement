@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <h1 align='center'>Department Details of Clinical Management</h1>
+    {% for i in data %}
+    <h2>
+    {{ i.dept_name }}
+    </h2>
+    <p><img  src="{{i.dept_image.url}}" alt="Girl in a jacket" width=200 height=200>
+       
+         
+    </p>
+   
+    {% endfor %}
+</body>
+</html>
