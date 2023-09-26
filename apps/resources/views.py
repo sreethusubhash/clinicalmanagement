@@ -56,3 +56,31 @@ def contact(request):
         obj.save()
         return HttpResponseRedirect('/')
     return render(request,'resources1/contact.html')
+def text_utils(request):
+    return render(request,'resources1/textutils.html')
+def analyze(request):
+    if request.method =='GET':
+        t=request.GET.get('textname')
+        c=request.GET.get('removepunc','off')
+        capitalized_text=request.GET.get('cap_txt')
+        lowercase_text=request.GET.get('lower_txt')
+        
+        punctuations="!#$%&'()*+, -./:;<=>?@[\]^_`{|}~"
+        analyzed=''
+        if c=='on':
+            
+            for char in t:
+                if char not in punctuations:
+                    analyzed+=char
+            
+        # else:
+        #     return HttpResponse('Error')
+        
+        if capitalized_text=='on':
+            analyzed=t.upper()
+            
+        if lowercase_text=='on':
+            analyzed=t.lower()
+            
+        data={'djtext':analyzed}
+    return render(request,'resources1/analyze.html',data)
