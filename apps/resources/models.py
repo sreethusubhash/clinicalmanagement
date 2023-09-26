@@ -1,6 +1,6 @@
 from django.db import models
 from apps.core.models import CreatedModifiedDateTimeBase
-from apps.user.models import User
+
 
 # Create your models here.
 
@@ -26,6 +26,8 @@ class Dept(CreatedModifiedDateTimeBase):
     dept_name=models.CharField(max_length=100)
     description=models.TextField(max_length=500)
     dept_image=models.ImageField(upload_to='uploads')
+    def __str__(self):
+        return self.dept_name
     
     
                              

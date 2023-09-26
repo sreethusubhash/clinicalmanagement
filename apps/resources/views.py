@@ -3,8 +3,14 @@ from django.http import HttpResponse,HttpResponseRedirect
 from .models import Appointments,Contact,Dept
 
 
-
 # Create your views here.
+def login(request):
+    #if request.method =='POST':
+        # obj=login()
+        # obj.Username=request.POST['uname']
+        # obj.Password=request.POST['psw']
+    return render(request,'resources1/login.html')
+
 def depturl2(request):
     data=Dept.objects.all()
     #dept_data=Dept.objects.get(id=2)
