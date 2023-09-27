@@ -71,11 +71,11 @@ span.psw {
 <h2>Login Form</h2>
 
 
-<form action="" method='POST'>
+<form action="{% url 'login' %}" method='POST'>
         {% csrf_token %}
-  {% comment %} <div class="imgcontainer">
+   <div class="imgcontainer">
     <img src="" alt="" class="avatar">
-  </div> {% endcomment %}
+  </div> 
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
