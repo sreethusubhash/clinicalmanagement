@@ -40,7 +40,6 @@ class Booking(models.Model):
     def __str__(self):
         return self.p_name
     
-    def __str__(self):
-        return self.doc_name
+    
     
    
