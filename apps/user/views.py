@@ -1,9 +1,13 @@
 from django.shortcuts import render,redirect
+from django.http import HttpResponseRedirect
 from .models import User
 from django.contrib.auth import authenticate,login
 #from django.contrib.auth.forms import AuthenticationForm
 
 # Create your views here.
+def exercise(request):
+    return render(request,'user/exercise.html')
+
 def user_list(request):
     users=User.objects.all()
     context={'users':users}
@@ -18,8 +22,9 @@ def user_login(request):
             login(request, user)
             # The intended view to redirect to after a successful login.
             return redirect('login')#view name
+            #return render(request,'resources1/index.html')
         else:
-            # Authentication failed, handle accordingly (e.g., display an error message)
+            
             return render(request, 'user/login.html', {'error_message': 'Invalid credentials'})
 # def login(request):
     return render(request,'user/login.html')
@@ -38,7 +43,7 @@ def user_login(request):
 #             )
 #             if user is not None:
 #                 #use the session to keep the authenticated user's id
-#                 login(request,user)
+#                 login(request,use# Authentication failed, handle accordingly (e.g., display an error message)r)
 #                 redirect('login')
                 
 #         else:

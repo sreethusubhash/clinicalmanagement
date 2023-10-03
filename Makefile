@@ -16,5 +16,6 @@ dev-rollback:
 	python manage.py migrate $(app) $(m) --settings=config.settings.dev
 dev-test:
 	python manage.py test --settings=config.settings.dev
+#pip install django-crispy-forms pip install crispy-bootstrap4
 
 

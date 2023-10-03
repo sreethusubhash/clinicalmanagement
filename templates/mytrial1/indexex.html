@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>HOME PAGE</h1>
+    {% comment %} <h2>Name is {{name}}</h2> {% endcomment %}
+    {% comment %} {% if num1 > 0 %}<h3>positive number</h3>
+   {% elif num1 < 0 %}
+   <h3>negative number</h3>
+   {% else %}
+   <h3>Number is zero</h3>
+   {% endif %} {% endcomment %}
+   {% for i in num %}
+   <h1>{{i}}</h1>{% endfor %}
+</body>
+</html>

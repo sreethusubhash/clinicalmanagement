@@ -1,9 +1,39 @@
 from django.shortcuts import render
 from django.http import HttpResponse,HttpResponseRedirect
-from .models import Appointments,Contact,Dept
+from .models import Appointments,Contact,Dept,Registration
+from apps.user.models import User
 
 
 # Create your views here.
+def register(request):
+    if request.method =='POST':
+        
+        obj=Registration()
+        obj.username=request.POST['uname']
+        obj.email=request.POST['email']
+        obj.password=request.POST['psw']
+        obj.phone_number=request.POST['pn']
+        obj.dateofbirth=request.POST['db']
+        obj.save()
+        return HttpResponseRedirect('register')
+    return render(request,'resources1/registration.html')
+
+def login_resource(request):
+    if request.method == 'POST':
+        username = request.POST["uname"]
+        password = request.POST["psw"]
+        try:
+            var=Registration.objects.get(username=username,password=password)#model(username)=views(un)
+            return HttpResponseRedirect('indexnew')
+        #if var:
+        except:
+            msg =('Invalid username or password')
+            return render(request,'resources1/loginresource.html',{'m':msg})
+    return render(request,'resources1/loginresource.html')
+
+def indexnew(request):
+    return render(request,'resources1/index.html')
+
 def login(request):
     #if request.method =='POST':
         # obj=login()
@@ -14,6 +44,10 @@ def login(request):
 def depturl2(request):
     data=Dept.objects.all()
     #dept_data=Dept.objects.get(id=2)
+    # q=request.GET['uid']
+    # if q:
+    #     var=Dept.objects.get(id=id)
+    #     return render(request,'resources1/depturl2.html',{'dept_data':var})
     return render(request,'resources1/depturl2.html',{'data':data})
 
 def depturl(request):

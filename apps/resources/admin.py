@@ -8,6 +8,8 @@ class AppointmentDetails(admin.ModelAdmin):
     
 class ContactInfo(admin.ModelAdmin):
     list_display=('name','subject')
+class RegistrationDetails(admin.ModelAdmin):
+    list_display=('username','email')
     
 class DeptDetail(admin.ModelAdmin):
     list_display=('dept_name','dept_image','description')
@@ -17,4 +19,5 @@ admin.site.register(models.Hospital)
 admin.site.register(models.Appointments,AppointmentDetails)
 admin.site.register(models.Contact,ContactInfo)
 admin.site.register(models.Dept,DeptDetail)
+admin.site.register(models.Registration,RegistrationDetails)
 

@@ -28,6 +28,16 @@ class Dept(CreatedModifiedDateTimeBase):
     dept_image=models.ImageField(upload_to='uploads')
     def __str__(self):
         return self.dept_name
+class Registration(CreatedModifiedDateTimeBase):
+    username=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    password=models.CharField(max_length=20)
+    phone_number=models.CharField(max_length=15)
+    dateofbirth=models.DateField(max_length=10)
+    class Meta:
+        verbose_name_plural='Registration'
+
+    
     
     
                              

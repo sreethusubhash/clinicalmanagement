@@ -12,9 +12,10 @@ DEFAULT_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    
 ]
-CUSTOM_APPS = ['apps.user','apps.resources','apps.core']
-THIRD_PARTY_APPS = []
+CUSTOM_APPS = ['apps.user','apps.resources','apps.core','apps.mytrial',]
+THIRD_PARTY_APPS = ['crispy_forms',"crispy_bootstrap4"]
 INSTALLED_APPS =[*DEFAULT_APPS,*CUSTOM_APPS,*THIRD_PARTY_APPS]
 
 MIDDLEWARE = [
@@ -88,12 +89,15 @@ STATIC_URL = "static/"
 
 MEDIA_URL = "media/"
 #MEDIA_ROOT="media/"
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploaddoctorsimg')
 
 STATICFILES_DIRS = [str(BASE_DIR/"static")]#for adding static files
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+ 
 AUTH_USER_MODEL="user.User"
