@@ -9,7 +9,7 @@ class AppointmentDetails(admin.ModelAdmin):
 class ContactInfo(admin.ModelAdmin):
     list_display=('name','subject')
 class RegistrationDetails(admin.ModelAdmin):
-    list_display=('username','email')
+    list_display=('username','email','password')
     
 class DeptDetail(admin.ModelAdmin):
     list_display=('dept_name','dept_image','description')

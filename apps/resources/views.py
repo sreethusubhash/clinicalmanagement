@@ -44,10 +44,10 @@ def login(request):
 def depturl2(request):
     data=Dept.objects.all()
     #dept_data=Dept.objects.get(id=2)
-    # q=request.GET['uid']
-    # if q:
-    #     var=Dept.objects.get(id=id)
-    #     return render(request,'resources1/depturl2.html',{'dept_data':var})
+    q=request.GET.get('hid')
+    if q:
+        var=Dept.objects.get(id=q)
+        return render(request,'resources1/depturl2.html',{'dept_data':var})
     return render(request,'resources1/depturl2.html',{'data':data})
 
 def depturl(request):
